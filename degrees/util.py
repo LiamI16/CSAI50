@@ -1,8 +1,7 @@
 class Node():
-    def __init__(self, state, parent, action):
+    def __init__(self, state, parent):
         self.state = state
         self.parent = parent
-        self.action = action
 
 
 class StackFrontier():
@@ -28,6 +27,10 @@ class StackFrontier():
 
 
 class QueueFrontier(StackFrontier):
+    def front(self):
+        if(self.empty() is True):
+            return None
+        return self.frontier[0]
 
     def remove(self):
         if self.empty():
